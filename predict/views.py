@@ -39,3 +39,9 @@ def predict_chances(request):
                 'petal_length': petal_length,
                 'petal_width': petal_width}, 
                 safe=False)
+
+
+def view_results(request):
+    # Submit prediction and show all
+    data = {"dataset": PredResults.objects.all()}
+    return render(request, "results.html", data)
